@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div style="padding-bottom: 40px;">
+    <img width="500" src="https://cdn.nlark.com/yuque/0/2023/png/517420/1687350901554-8f4fb939-cc37-45bb-87c8-e4f1678ef6b8.png" />
+    <p>viewBox 原理：</p>
+    <p>整个世界可以当成一个画板，我们只是通过视口看到画板的一部分</p>
+    <p>viewBox 的前两个值是用来控制视口的移动</p>
+    <p>viewBox 的后两个值与 svg 的 width 和 height 值的比来设置画板内容的缩放</p>
+  </div>
+  <h2>案例</h2>
+  <div>
+    <P>viewBox设置为：0 0 100 100，width: 200 height: 200</P>
+    <p>前两位： 0 0，表示没有偏移</p>
+    <p>后两位：100 100，对标属性：width 和 height，进行对应的缩放，此时表示内部元素放大 2 倍</p>
+    <svg viewBox="0 0 100 100" width="200" height="200" style="background: #9c9c9c;">
+      <rect x="0" y="0" width="50" height="50" fill="blue" />
+    </svg>
+  </div>
+
+  <div>
+    <p>viewBox设置为：-10 -10 100 100，width: 200 height: 200</p>
+    <p>前两位： -10 -10，表示视口向 X 和 Y 轴各移动 -10 个单位(所以你看到的蓝正方形向下偏移了)</p>
+    <svg viewBox="-10 -10 100 100" width="200" height="200" style="background: #9c9c9c;">
+      <rect x="0" y="0" width="50" height="50" fill="blue" />
+    </svg>
+  </div>
+
+  <div>
+    <p>viewBox设置为：10 10 100 100，width: 200 height: 200</p>
+    <p>前两位： 0 0</p>
+    <p>后两位： 200 200，展示 200 宽高的内容</p>
+    <svg viewBox="10 10 100 100" width="200" height="200" style="background: #9c9c9c;">
+      <rect x="0" y="0" width="50" height="50" fill="blue" />
+    </svg>
+  </div>
+
+  <div>
+    <p>viewBox设置为：0 0 200 200，width: 100 height: 100</p>
+    <p>前两位： 0 0</p>
+    <p>后两位： 200 200，展示 200 宽高的内容</p>
+    <svg viewBox="0 0 200 200" width="100" height="100" style="background: #9c9c9c;">
+      <rect x="10" y="10" width="50" height="50" fill="blue" />
+    </svg>
+  </div>
+
+</body>
+</html>
