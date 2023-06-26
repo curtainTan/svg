@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+    <path id="path" d="M100 200 C100 100 400 100 400 200" fill="none" stroke="gray" stroke-width="3" />
+    <text id="animatedText" font-size="20" fill="black">
+      <textPath xlink:href="#path">This is animated text along a path.</textPath>
+    </text>
+  </svg>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script>
+    // 使用 GSAP 创建文本沿路径的动画
+    const path = document.getElementById('path');
+    const textPath = document.getElementById('animatedText').querySelector('textPath');
+  
+    // 设置文本的起始位置为路径起点
+    const startOffset = textPath.getComputedTextLength();
+    textPath.setAttribute('startOffset', startOffset);
+  
+    // 创建动画对象
+    const tl = gsap.timeline({ repeat: -1 });
+    tl.to(textPath, { startOffset: 0, duration: 2, ease: 'power1.inOut' });
+  
+    // 调用动画
+    tl.restart();
+  </script>
+  
+</body>
+</html>

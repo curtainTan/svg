@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <h4>使用 additive：表示动画相对属性的值，进行叠加</h4>
+    <p>原本宽度是 100,100 与 form 的值进行叠加，只在当前次进行叠加，下一次动画会重新开始</p>
+    <svg width="500" height="130">
+      <rect x="50" y="50" width="100" height="100">
+        <animate
+          attributeName="width"
+          from="0"
+          to="50"
+          dur="2s"
+          additive="sum"
+          fill="freeze"
+          repeatCount="2"
+        />
+      </rect>
+    </svg>
+  </div>
+  <div>
+    <h4>使用 accumulate：表示动画的累积方式，动画重复时起作用</h4>
+    <svg width="500" height="130">
+      <rect x="0" y="0" width="100" height="100">
+        <animate
+          attributeName="width"
+          from="0"
+          to="40"
+          dur="2s"
+          additive="sum"
+          accumulate="sum"
+          repeatCount="2"
+          fill="freeze"
+        />
+      </rect> 
+    </svg>
+  </div>
+</body>
+</html>

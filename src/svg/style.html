@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .svg {
+      width: 600px;
+      height: 600px;
+    }
+  </style>
+</head>
+<body>
+  <svg class="svg" width="140" height="180" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+    <title>Cat</title>
+    <!-- 圆 -->
+    <circle cx="70" cy="95" r="50" style="stroke: black; fill: none;" />
+    <circle cx="55" cy="80" r="5" stroke="black" fill="#339933" />
+    <circle cx="85" cy="80" r="5" stroke="black" fill="#339933" />
+    <!-- g--group分组 -->
+    <g id="whiskers">
+      <line x1="75" y1="95" x2="135" y2="85" stroke="black" />
+      <line x1="75" y1="95" x2="135" y2="105" stroke="black" />
+    </g>
+    <!-- 使用分组 -->
+    <!-- 使用空格分开，scale 分别是 x y 相乘，故 x 取对应的负值 -->
+    <!-- 需要注意：transform 的执行有先后顺序 -->
+    <use xlink:href="#whiskers" transform="scale(-1 1) translate(-140 0)" />
+
+    <!-- 耳朵 polyline折线 -->
+    <polyline points="108 62, 90 10, 70 45, 50, 10, 32, 62" style="stroke: black; fill: none;" />
+    <!-- 嘴 -->
+    <polyline points="35 110, 45 120, 95 120, 105, 110" style="stroke: black; fill: none;" />
+    <!-- 鼻子 -->
+    <path d="M 75 90 L 65 90 A 5 10 0 0 0 75 90" style="stroke: black; fill: #ffcccc;" />
+    <!-- 需要注意，如果内容超出 svg 的画框，不会展示 -->
+    <text x="60"
+      y="165"
+      style="font-family: sans-serif; font-size: 14pt; stroke: none; fill: black;"
+    >Cat</text>
+
+    <line x1="220" y1="220" x2="400" y2="400" style="stroke: black;" />
+  </svg>
+</body>
+</html>
