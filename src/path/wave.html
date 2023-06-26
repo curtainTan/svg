@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300" width="500" height="300">
+    <!-- <path d="M0,0 " fill="none" stroke="#000" stroke-width="3"/> -->
+
+    <path d="M 50 50 Q 75 75, 100 50 T 150 50" style="stroke: #000; fill: none">
+      <animate  />
+    </path>
+  </svg>
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300" width="500" height="300">
+    <path d="M 50 50 Q 75 75, 100 50 T 150 50" style="stroke: #000; fill: none">
+      <animate attributeName="d" dur="2s" repeatCount="indefinite"
+        values="M 50 50 Q 75 75, 100 50 T 150 50; M 50 50 Q 75 25, 100 50 T 150 50; M 50 50 Q 75 75, 100 50 T 150 50;"
+      />
+    </path>
+  </svg>
+</body>
+</html>
